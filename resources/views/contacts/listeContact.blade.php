@@ -14,6 +14,11 @@
     </header>
     <!-- contenu -->
     <main class="container my-5">
+        {{-- message de session --}}
+        @session('success')
+            <div class="alert alert-success text-center">{{ $value }}</div>
+        @endsession
+        {{-- message de session fin --}}
         <div class="clearfix mt-5 mb-3">
             <a href="{{ route('contact.ajouterContact') }}">
                 <button class="btn btn-primary float-end">Créer un contact</button>

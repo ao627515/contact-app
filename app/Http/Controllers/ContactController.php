@@ -32,6 +32,6 @@ class ContactController extends Controller
             ]
         );
 
-        return redirect()->route('contact.listeContact');
+        return redirect()->route('contact.listeContact')->with('success', 'Contact enregistrer');
     }
 }
