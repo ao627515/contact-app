@@ -10,4 +10,7 @@ class ContactController extends Controller
         return view('contacts.listeContact');
     }
 
+    public function ajouterContact(){
+        return view('contacts.ajouterContact');
+    }
 }
