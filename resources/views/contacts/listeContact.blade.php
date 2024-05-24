@@ -49,7 +49,7 @@
                                 <td>{{ $contact->age }}</td>
                                 <td class="w-25">
                                     <div class="btn-group" role="group">
-                                        <a href="show.html">
+                                        <a href="{{ route('contact.detailContact', $contact->id) }}">
                                             <button type="button" class="btn btn-info">Voir</button>
                                         </a>
                                         <a href="{{ route('contact.modifierContact', $contact->id) }}" class="mx-2">

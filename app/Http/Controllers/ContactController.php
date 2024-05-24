@@ -61,4 +61,9 @@ class ContactController extends Controller
         $contact->delete();
         return redirect()->route('contact.listeContact')->with('success', 'Contact supprimer');
     }
+
+    public function detailContact($id){
+        $contact = Contact::findOrFail($id);
+        return view('contacts.detailContact', compact('contact'));
+    }
 }

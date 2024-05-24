@@ -13,3 +13,4 @@ Route::post('contacts/enregistrer', [ContactController::class, 'enregistrerConta
 Route::get('contacts/{id}/modifier', [ContactController::class, 'modifierContact'])->name('contact.modifierContact');
 Route::put('contacts/{id}/modifier/enregistrer', [ContactController::class, 'enregistrerModification'])->name('contact.enregistrerModification');
 Route::delete('contacts/{id}/supprimer', [ContactController::class, 'supprimerContact'])->name('contact.supprimerContact');
+Route::get('contacts/{id}/detail', [ContactController::class, 'detailContact'])->name('contact.detailContact');
