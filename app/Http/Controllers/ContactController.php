@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class ContactController extends Controller
 {
     public function listeContact(){
-        return view('contacts.listeContact');
+        $listeContacts = Contact::all();
+
+        return view('contacts.listeContact', compact('listeContacts'));
     }
 
     public function ajouterContact(){

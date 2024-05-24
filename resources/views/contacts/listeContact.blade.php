@@ -41,121 +41,32 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Dupont</td>
-                            <td>Jean</td>
-                            <td>0123456789</td>
-                            <td>25</td>
-                            <td class="w-25">
-                                <div class="btn-group" role="group">
-                                    <a href="show.html">
-                                        <button type="button" class="btn btn-info">Voir</button>
-                                    </a>
-                                    <a href="edit.html" class="mx-2">
-                                        <button type="button" class="btn btn-warning">
-                                            Modifier
-                                        </button>
-                                    </a>
-                                    <form action="" method="post">
-                                        <button type="submit" class="btn btn-danger">
-                                            Supprimer
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Martin</td>
-                            <td>Claire</td>
-                            <td>0987654321</td>
-                            <td>30</td>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-info rounded">
-                                        Voir
-                                    </button>
-                                    <a href="edit.html" class="mx-2">
-                                        <button type="button" class="btn btn-warning">
-                                            Modifier
-                                        </button>
-                                    </a>
-                                    <form action="" method="post">
-                                        <button type="button" class="btn btn-danger">
-                                            Supprimer
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Legrand</td>
-                            <td>Émilie</td>
-                            <td>0112233445</td>
-                            <td>28</td>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-info rounded">
-                                        Voir
-                                    </button>
-                                    <a href="edit.html" class="mx-2">
-                                        <button type="button" class="btn btn-warning">
-                                            Modifier
-                                        </button>
-                                    </a>
-                                    <form action="" method="post">
-                                        <button type="button" class="btn btn-danger">
-                                            Supprimer
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Petit</td>
-                            <td>Marc</td>
-                            <td>0223344556</td>
-                            <td>35</td>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-info rounded">
-                                        Voir
-                                    </button>
-                                    <a href="edit.html" class="mx-2">
-                                        <button type="button" class="btn btn-warning">
-                                            Modifier
-                                        </button>
-                                    </a>
-                                    <form action="" method="post">
-                                        <button type="button" class="btn btn-danger">
-                                            Supprimer
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Durand</td>
-                            <td>Lucie</td>
-                            <td>0334455667</td>
-                            <td>22</td>
-                            <td>
-                                <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-info rounded">
-                                        Voir
-                                    </button>
-                                    <a href="edit.html" class="mx-2">
-                                        <button type="button" class="btn btn-warning">
-                                            Modifier
-                                        </button>
-                                    </a>
-                                    <form action="" method="post">
-                                        <button type="button" class="btn btn-danger">
-                                            Supprimer
-                                        </button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                        @foreach ($listeContacts as $contact)
+                            <tr>
+                                <td>{{ $contact->nom }}</td>
+                                <td>{{ $contact->prenom }}</td>
+                                <td>{{ $contact->telephone }}</td>
+                                <td>{{ $contact->age }}</td>
+                                <td class="w-25">
+                                    <div class="btn-group" role="group">
+                                        <a href="show.html">
+                                            <button type="button" class="btn btn-info">Voir</button>
+                                        </a>
+                                        <a href="edit.html" class="mx-2">
+                                            <button type="button" class="btn btn-warning">
+                                                Modifier
+                                            </button>
+                                        </a>
+                                        <form action="" method="post">
+                                            <button type="submit" class="btn btn-danger">
+                                                Supprimer
+                                            </button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+
                     </tbody>
                 </table>
             </div>
