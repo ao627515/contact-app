@@ -36,4 +36,23 @@ class ContactController extends Controller
 
         return redirect()->route('contact.listeContact')->with('success', 'Contact enregistrer');
     }
+
+    public function modifierContact($id){
+        $contact = Contact::findOrFail($id);
+
+        return view('contacts.modifierContact', compact('contact'));
+    }
+
+    public function enregistrerModification(Request $request, $id){
+        $contact = Contact::findOrFail($id);
+
+        $contact->update([
+            'nom' => $request->nom,
+            'prenom' => $request->prenom,
+            'telephone' => $request->telephone,
+            'age' => $request->age
+        ]);
+
+        return redirect()->route('contact.listeContact')->with('success', 'Contact modifier');
+    }
 }

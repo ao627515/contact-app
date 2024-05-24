@@ -52,7 +52,7 @@
                                         <a href="show.html">
                                             <button type="button" class="btn btn-info">Voir</button>
                                         </a>
-                                        <a href="edit.html" class="mx-2">
+                                        <a href="{{ route('contact.modifierContact', $contact->id) }}" class="mx-2">
                                             <button type="button" class="btn btn-warning">
                                                 Modifier
                                             </button>
