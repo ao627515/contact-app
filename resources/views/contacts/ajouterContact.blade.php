@@ -22,7 +22,8 @@
           <h2 class="text-center">Créer un contact</h2>
         </div>
         <div class="card-body">
-          <form action="" method="post">
+          <form action="{{ route('contact.enregistrerContact') }}" method="post">
+            @csrf <!-- Important -->
             <div class="row">
               <div class="row col-12 mb-3">
                 <div class="col-4">
@@ -33,6 +34,7 @@
                     class="form-control"
                     type="text"
                     placeholder="Nom"
+                    name="nom"
                     required
                   />
                 </div>
@@ -46,6 +48,7 @@
                     class="form-control col-8"
                     type="text"
                     placeholder="Prénom"
+                    name="prenom"
                     required
                   />
                 </div>
@@ -59,6 +62,7 @@
                     class="form-control col-8"
                     type="text"
                     placeholder="Téléphone"
+                    name="telephone"
                     required
                   />
                 </div>
@@ -72,6 +76,7 @@
                     class="form-control col-8"
                     type="number"
                     placeholder="Âge"
+                    name="age"
                     required
                   />
                 </div>

@@ -13,4 +13,13 @@ class ContactController extends Controller
     public function ajouterContact(){
         return view('contacts.ajouterContact');
     }
+
+    public function enregistrerContact(Request $request){
+        $nom = $request->nom;
+        $prenom = $request->prenom;
+        $telephone = $request->telephone;
+        $age = $request->age;
+
+        // enregistrement en base de donnee
+    }
 }
