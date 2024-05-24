@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
     <title>Gestion des contacts</title>
 </head>
 
@@ -15,7 +15,7 @@
     <!-- contenu -->
     <main class="container my-5">
         <div class="clearfix mt-5 mb-3">
-            <a href="create.html">
+            <a href="{{ route('contact.ajouterContact') }}">
                 <button class="btn btn-primary float-end">Créer un contact</button>
             </a>
         </div>
