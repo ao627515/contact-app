@@ -55,4 +55,10 @@ class ContactController extends Controller
 
         return redirect()->route('contact.listeContact')->with('success', 'Contact modifier');
     }
+
+    public function supprimerContact($id){
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+        return redirect()->route('contact.listeContact')->with('success', 'Contact supprimer');
+    }
 }

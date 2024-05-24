@@ -57,7 +57,9 @@
                                                 Modifier
                                             </button>
                                         </a>
-                                        <form action="" method="post">
+                                        <form action="{{ route('contact.supprimerContact', $contact->id) }}" method="post">
+                                            @method('delete') <!-- Important -->
+                                            @csrf <!-- Important -->
                                             <button type="submit" class="btn btn-danger">
                                                 Supprimer
                                             </button>
