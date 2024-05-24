@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -21,5 +22,16 @@ class ContactController extends Controller
         $age = $request->age;
 
         // enregistrement en base de donnee
+
+        Contact::create(
+            [
+                'nom' => $nom,
+                'prenom' => $prenom,
+                'telephone' => $telephone,
+                'age' => $age
+            ]
+        );
+
+        return redirect()->route('contact.listeContact');
     }
 }
