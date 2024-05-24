@@ -60,7 +60,7 @@
                 <div class="col-8">
                   <input
                     class="form-control col-8"
-                    type="text"
+                    type="number"
                     placeholder="Téléphone"
                     name="telephone"
                     required
