@@ -41,33 +41,37 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($listeContacts as $contact)
+                        @forelse ($listeContacts as $contact)
+                        <tr>
+                            <td>{{ $contact->nom }}</td>
+                            <td>{{ $contact->prenom }}</td>
+                            <td>{{ $contact->telephone }}</td>
+                            <td>{{ $contact->age }}</td>
+                            <td class="w-25">
+                                <div class="btn-group" role="group">
+                                    <a href="{{ route('contact.detailContact', $contact->id) }}">
+                                        <button type="button" class="btn btn-info">Voir</button>
+                                    </a>
+                                    <a href="{{ route('contact.modifierContact', $contact->id) }}" class="mx-2">
+                                        <button type="button" class="btn btn-warning">
+                                            Modifier
+                                        </button>
+                                    </a>
+                                    <form action="{{ route('contact.supprimerContact', $contact->id) }}" method="post">
+                                        @method('delete') <!-- Important -->
+                                        @csrf <!-- Important -->
+                                        <button type="submit" class="btn btn-danger">
+                                            Supprimer
+                                        </button>
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                        @empty
                             <tr>
-                                <td>{{ $contact->nom }}</td>
-                                <td>{{ $contact->prenom }}</td>
-                                <td>{{ $contact->telephone }}</td>
-                                <td>{{ $contact->age }}</td>
-                                <td class="w-25">
-                                    <div class="btn-group" role="group">
-                                        <a href="{{ route('contact.detailContact', $contact->id) }}">
-                                            <button type="button" class="btn btn-info">Voir</button>
-                                        </a>
-                                        <a href="{{ route('contact.modifierContact', $contact->id) }}" class="mx-2">
-                                            <button type="button" class="btn btn-warning">
-                                                Modifier
-                                            </button>
-                                        </a>
-                                        <form action="{{ route('contact.supprimerContact', $contact->id) }}" method="post">
-                                            @method('delete') <!-- Important -->
-                                            @csrf <!-- Important -->
-                                            <button type="submit" class="btn btn-danger">
-                                                Supprimer
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
+                                <td colspan="5" class="lead text-center">Aucun contact n’est enregistré</td>
                             </tr>
-                        @endforeach
+                        @endforelse
 
                     </tbody>
                 </table>
