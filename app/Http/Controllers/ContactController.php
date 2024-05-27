@@ -37,8 +37,8 @@ class ContactController extends Controller
         // 'nullable' signifie que le champ peut être vide (null), mais s'il contient une valeur, elle doit respecter les règles spécifiées.
         $request->validate(
             [
-                'nom' => ['required', 'string', 'max:255'],
-                'prenom' => ['required', 'string', 'max:255'],
+                'nom' => ['required', 'string', 'max:200'],
+                'prenom' => ['required', 'string', 'max:200'],
                 'telephone' => ['required', 'numeric'],
                 'age' => ['nullable', 'numeric'],
             ],
@@ -46,10 +46,10 @@ class ContactController extends Controller
             [
                 'nom.required' => 'Le nom est obligatoire.',
                 'nom.string' => 'Le nom doit être une chaîne de caractères.',
-                'nom.max' => 'Le nom ne doit pas dépasser 255 caractères.',
+                'nom.max' => 'Le nom ne doit pas dépasser 200 caractères.',
                 'prenom.required' => 'Le prénom est obligatoire.',
                 'prenom.string' => 'Le prénom doit être une chaîne de caractères.',
-                'prenom.max' => 'Le prénom ne doit pas dépasser 255 caractères.',
+                'prenom.max' => 'Le prénom ne doit pas dépasser 200 caractères.',
                 'telephone.required' => 'Le téléphone est obligatoire.',
                 'telephone.numeric' => 'Le téléphone doit être un nombre.',
                 'age.numeric' => 'L\'âge doit être un nombre.',
@@ -85,8 +85,8 @@ class ContactController extends Controller
         // 'nullable' signifie que le champ peut être vide (null), mais s'il contient une valeur, elle doit respecter les règles spécifiées.
         $request->validate(
             [
-                'nom' => ['required', 'string', 'max:255'],
-                'prenom' => ['required', 'string', 'max:255'],
+                'nom' => ['required', 'string', 'max:200'],
+                'prenom' => ['required', 'string', 'max:200'],
                 'telephone' => ['required', 'numeric'],
                 'age' => ['nullable', 'numeric'],
             ],
@@ -94,10 +94,10 @@ class ContactController extends Controller
             [
                 'nom.required' => 'Le nom est obligatoire.',
                 'nom.string' => 'Le nom doit être une chaîne de caractères.',
-                'nom.max' => 'Le nom ne doit pas dépasser 255 caractères.',
+                'nom.max' => 'Le nom ne doit pas dépasser 200 caractères.',
                 'prenom.required' => 'Le prénom est obligatoire.',
                 'prenom.string' => 'Le prénom doit être une chaîne de caractères.',
-                'prenom.max' => 'Le prénom ne doit pas dépasser 255 caractères.',
+                'prenom.max' => 'Le prénom ne doit pas dépasser 200 caractères.',
                 'telephone.required' => 'Le téléphone est obligatoire.',
                 'telephone.numeric' => 'Le téléphone doit être un nombre.',
                 'age.numeric' => 'L\'âge doit être un nombre.',
